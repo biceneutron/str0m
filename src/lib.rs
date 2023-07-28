@@ -780,6 +780,14 @@ pub enum Output {
 }
 
 impl Rtc {
+    ///
+    pub fn show_send_addr(&self) {
+        if let Some(send_addr) = &self.send_addr {
+            println!("send_addr.source {}", send_addr.source);
+            println!("send_addr.destination {}", send_addr.destination);
+        }
+    }
+
     /// Creates a new instance with default settings.
     ///
     /// To configure the instance, use [`RtcConfig`].
