@@ -788,6 +788,14 @@ impl Rtc {
         }
     }
 
+    ///
+    pub fn get_send_addr(&self) -> Option<(SocketAddr, SocketAddr)> {
+        if let Some(send_addr) = &self.send_addr {
+            return Some((send_addr.source, send_addr.destination));
+        }
+        None
+    }
+
     /// Creates a new instance with default settings.
     ///
     /// To configure the instance, use [`RtcConfig`].
